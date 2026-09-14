@@ -23,15 +23,23 @@
 
 ### Supabase RLS 策略
 
-系统依赖 Row Level Security 实现数据隔离，而非客户端权限控制：
+系统依赖 Row Level Security 实现数据隔离，而非客户端权限控制。
+
+修复前的问题：RLS 未启用，anon key 可对全部表执行任意读/写/删，后台登录门形同虚设。
 
 | 表 | 匿名用户 (anon) | 认证管理员 (authenticated) |
 |---|---|---|
-| `assessments` | INSERT only | 全部 CRUD |
-| `jobs` | 无权限 | 全部 CRUD |
+| `assessments` | INSERT（提交测评） | 全部 CRUD |
+| `jobs` | SELECT（报告岗位匹配需要） | 全部 CRUD |
 | `admin_audit_log` | 无权限 | SELECT + INSERT（不可删改） |
 
-部署步骤：在 Supabase Dashboard → SQL Editor 执行 `supabase_rls_policies.sql`。
+关键点：
+
+- **`assessments` 对匿名的 SELECT / UPDATE / DELETE 全部关闭** —— 这是本次修复关闭的核心漏洞
+- **`jobs` 对匿名开放 SELECT** 是必要的：员工交卷后结果页要拉岗位配置计算匹配度。若收紧到仅认证用户，所有匿名员工报告会退回内置默认岗位，管理员自定义配置失效。岗位名称与维度权重属低敏感度信息，且匹配结果本就展示给每位员工；如需进一步收紧，应改为 `SECURITY DEFINER` 的 RPC 只返回匹配结果
+- **`admin_audit_log` 不设 UPDATE / DELETE 策略** —— 任何账号（含管理员）都无法修改或删除审计记录
+
+部署步骤：在 Supabase Dashboard → SQL Editor 执行 `supabase_rls_policies.sql`，然后按文件末尾的自测清单逐项回归验证。
 
 ### 环境变量
 
