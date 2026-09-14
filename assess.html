@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>康源美宏 · 测评答题</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <header class="site-header site-header-light">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="brand-logo">康</span>
+        <span class="brand-text"><strong>康源美宏</strong><em>职业测评</em></span>
+      </a>
+      <nav class="site-nav">
+        <a href="./" class="active">测评</a>
+        <a href="./admin.html">管理后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-assess">
+    <div class="assess-header">
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text"><span id="progressPercent">0%</span> 已完成</div>
+      </div>
+      <div class="step-indicators" id="stepIndicators"></div>
+    </div>
+
+    <div class="assess-body" id="assessBody">
+      <div class="loading-state">正在加载测评题目…</div>
+    </div>
+
+    <div class="assess-footer" id="assessFooter" style="display:none;">
+      <button class="btn btn-ghost" id="prevPartBtn">上一部分</button>
+      <span class="part-info" id="partInfo"></span>
+      <button class="btn btn-primary" id="nextPartBtn">下一部分</button>
+    </div>
+  </main>
+
+  <script type="module" src="/src/pages/assess.js"></script>
+</body>
+</html>

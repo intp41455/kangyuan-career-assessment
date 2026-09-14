@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>康源美宏 · 员工职业测评</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="brand-logo">康</span>
+        <span class="brand-text">
+          <strong>康源美宏</strong>
+          <em>员工职业测评与岗位智能匹配</em>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="./" class="active">测评</a>
+        <a href="./admin.html">管理后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-home">
+    <section class="hero">
+      <div class="hero-badge">综合职业测评 · 162题 · 五大工具</div>
+      <h1>发现你的职业潜能<br/>找到最适合你的岗位</h1>
+      <p class="hero-sub">
+        通过 MBTI、大五人格、PDP、DISC、九型人格五大专业测评工具，
+        全面了解你的性格特质、行为风格与深层动机，并由系统智能匹配康源美宏最适合你的岗位。
+      </p>
+      <div class="hero-tools">
+        <span>MBTI 人格</span><span>大五人格</span><span>PDP 行为</span><span>DISC 行为</span><span>九型人格</span>
+      </div>
+    </section>
+
+    <section class="info-card" id="infoCard">
+      <h2 class="section-title">填写个人信息</h2>
+      <p class="section-desc">请如实填写以下基本信息，部分信息将作为辅助分析参考。</p>
+
+      <form id="infoForm" class="info-form" novalidate>
+        <div class="form-row">
+          <label class="form-field">
+            <span class="field-label">姓名 <em>*</em></span>
+            <input type="text" name="name" id="name" placeholder="请输入姓名" maxlength="20" required />
+          </label>
+          <label class="form-field">
+            <span class="field-label">性别 <em>*</em></span>
+            <select name="gender" id="gender" required>
+              <option value="">请选择</option>
+              <option value="男">男</option>
+              <option value="女">女</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="form-field">
+            <span class="field-label">年龄 <em>*</em></span>
+            <input type="number" name="age" id="age" min="16" max="70" placeholder="请输入年龄" required />
+          </label>
+          <label class="form-field">
+            <span class="field-label">血型 <em>*</em></span>
+            <select name="blood_type" id="blood_type" required>
+              <option value="">请选择</option>
+              <option value="A">A 型</option>
+              <option value="B">B 型</option>
+              <option value="AB">AB 型</option>
+              <option value="O">O 型</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="form-field">
+            <span class="field-label">星座 <em>*</em></span>
+            <select name="zodiac" id="zodiac" required>
+              <option value="">请选择</option>
+              <option value="白羊座">白羊座</option>
+              <option value="金牛座">金牛座</option>
+              <option value="双子座">双子座</option>
+              <option value="巨蟹座">巨蟹座</option>
+              <option value="狮子座">狮子座</option>
+              <option value="处女座">处女座</option>
+              <option value="天秤座">天秤座</option>
+              <option value="天蝎座">天蝎座</option>
+              <option value="射手座">射手座</option>
+              <option value="摩羯座">摩羯座</option>
+              <option value="水瓶座">水瓶座</option>
+              <option value="双鱼座">双鱼座</option>
+            </select>
+          </label>
+          <div class="form-field form-field-empty"></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-large" id="startBtn">开始测评</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="flow-preview">
+      <h2 class="section-title">测评流程</h2>
+      <div class="flow-steps">
+        <div class="flow-step"><span class="step-num">1</span><strong>填写信息</strong><em>姓名 / 性别 / 年龄等</em></div>
+        <div class="flow-step"><span class="step-num">2</span><strong>MBTI</strong><em>28题 · 二选一</em></div>
+        <div class="flow-step"><span class="step-num">3</span><strong>大五人格</strong><em>44题 · 五点量表</em></div>
+        <div class="flow-step"><span class="step-num">4</span><strong>PDP</strong><em>30题 · 五点量表</em></div>
+        <div class="flow-step"><span class="step-num">5</span><strong>DISC</strong><em>24题 · 四选一</em></div>
+        <div class="flow-step"><span class="step-num">6</span><strong>九型人格</strong><em>36题 · 是否符合</em></div>
+        <div class="flow-step step-result"><span class="step-num">7</span><strong>查看报告</strong><em>七维度分析 · 岗位匹配</em></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>康源美宏 · 养老机构运营 · 教育培训 · 居家社区服务</p>
+      <p class="footer-note">本测评结果仅供参考，不作为单一决策依据。</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/pages/home.js"></script>
+</body>
+</html>

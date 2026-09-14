@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>康源美宏 · 职业岗位性格画像参考手册</title>
+<style>
+  :root{--blue:#1F4E79;--blue2:#2E6FB0;--green:#2E9E6B;--ink:#222;--muted:#6b7280;--line:#e3e8ef;--bg:#f5f7fa;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  .page{max-width:920px;margin:0 auto;background:#fff;padding:48px 56px;box-shadow:0 2px 18px rgba(0,0,0,.06);}
+  /* 封面 */
+  .cover{text-align:center;padding:40px 0 28px;border-bottom:3px solid var(--blue);margin-bottom:8px;}
+  .cover .kicker{letter-spacing:6px;color:var(--blue);font-size:13px;font-weight:600;}
+  .cover h1{font-size:30px;margin:14px 0 6px;color:var(--blue);letter-spacing:1px;}
+  .cover .sub{color:var(--muted);font-size:15px;}
+  .cover .meta{margin-top:18px;font-size:12px;color:#9aa3af;}
+  h2.sec{font-size:19px;color:var(--blue);margin:38px 0 14px;padding-left:11px;border-left:4px solid var(--blue);}
+  p.lead{color:#444;font-size:14px;margin:6px 0 14px;}
+  .note-box{background:#f1f6fb;border:1px solid #d6e4f2;border-radius:8px;padding:12px 16px;font-size:13px;color:#33475b;margin:10px 0;}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px;}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;}
+  thead th{background:var(--blue);color:#fff;font-weight:600;}
+  .t-name{font-weight:600;}
+  .t-w{text-align:center;font-weight:700;color:var(--blue);white-space:nowrap;}
+  .idx{text-align:center;color:var(--muted);width:34px;}
+  .layer{text-align:center;font-size:12px;white-space:nowrap;}
+  .layer.la{color:var(--blue2);} .layer.lb{color:var(--green);}
+  /* 卡片 */
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0;background:#fff;page-break-inside:avoid;}
+  .card-head{display:flex;align-items:center;gap:12px;}
+  .card-no{font-size:18px;font-weight:800;color:#fff;background:var(--blue);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .card-titles{flex:1;}
+  .card-titles h3{margin:0;font-size:17px;color:var(--ink);}
+  .card-sub{margin-top:3px;font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;}
+  .grp{font-size:11px;font-weight:700;padding:1px 8px;border-radius:10px;color:#fff;}
+  .grp-org{background:#2E6FB0;} .grp-med{background:#2E9E6B;}
+  .src{color:#9aa3af;}
+  .layer-break{font-size:11px;color:#9aa3af;white-space:nowrap;text-align:right;}
+  .card-note{font-size:13px;color:#33475b;margin:10px 0 8px;background:#f7fafc;border-radius:6px;padding:7px 10px;}
+  .qual{font-size:12.5px;color:#7a4b00;background:#fff7e6;border:1px solid #ffe1a8;border-radius:6px;padding:7px 10px;margin:6px 0 10px;}
+  .q-tag{display:inline-block;font-size:11px;font-weight:700;color:#a85b00;margin-right:6px;}
+  .bars{display:flex;flex-direction:column;gap:5px;}
+  .dim-row{display:flex;align-items:center;gap:8px;font-size:12.5px;}
+  .dim-name{width:118px;flex:0 0 auto;color:#333;display:flex;align-items:center;gap:5px;}
+  .tag{font-style:normal;font-size:10px;font-weight:700;color:#fff;border-radius:3px;padding:0 4px;}
+  .tag.ta{background:var(--blue2);} .tag.tb{background:var(--green);}
+  .bar-track{flex:1;background:#eef1f5;border-radius:4px;height:13px;overflow:hidden;}
+  .bar-fill{display:block;height:100%;border-radius:4px;}
+  .dim-w{width:34px;text-align:right;font-weight:700;color:#444;flex:0 0 auto;}
+  .card-foot{font-size:12.5px;color:#555;margin-top:10px;}
+  .card-foot b{color:var(--blue);}
+  /* 矩阵 */
+  .matrix-wrap{overflow-x:auto;margin-top:8px;}
+  table.matrix{font-size:11px;min-width:1080px;}
+  table.matrix th,table.matrix td{border:1px solid #e3e8ef;padding:4px 5px;text-align:center;}
+  table.matrix thead th{background:var(--blue);color:#fff;font-weight:600;position:relative;}
+  .rot{height:118px;white-space:nowrap;vertical-align:bottom;padding:0 !important;}
+  .rot>span{display:inline-block;transform:rotate(-55deg);transform-origin:left bottom;width:24px;margin-left:34px;margin-bottom:6px;font-size:10.5px;text-align:left;}
+  .pname{text-align:left;font-weight:600;white-space:nowrap;background:#f3f6fb;position:sticky;left:0;}
+  td.empty{color:#cfd6df;}
+  td.val{color:#555;}
+  td.val.mid{background:#eaf3ff;font-weight:700;color:var(--blue2);}
+  td.val.hot{background:#1F4E79;color:#fff;font-weight:800;}
+  .foot-note{margin-top:26px;border-top:1px solid var(--line);padding-top:12px;font-size:11.5px;color:#9aa3af;}
+  @media print{.page{box-shadow:none;}}
+</style></head>
+<body><div class="page">
+
+  <div class="cover">
+    <div class="kicker">KANGYUAN CAREER PROFILE</div>
+    <h1>康源美宏 · 职业岗位性格画像参考手册</h1>
+    <div class="sub">基于 5 大测评体系 × 22 维岗位匹配模型的岗位性格权重画像</div>
+    <div class="meta">生成日期 2026-08-24 ｜ 数据来源：系统岗位配置（defaultJobs.js / scoring.js）｜ 共 17 个岗位</div>
+  </div>
+
+  <h2 class="sec">一、手册说明</h2>
+  <p class="lead">本手册将系统中"隐藏在代码公式里的职业岗位画像"以清晰、可读的方式呈现，供招聘、用人、人才盘点等场景参考。所有权重数据直接取自系统岗位配置，确保与线上测评结果完全一致。</p>
+  <div class="note-box">
+    <b>如何使用：</b>每位员工完成 MBTI / 大五 / PDP / DISC / 九型 5 项测评后，系统按"22 维岗位匹配模型"计算其与各岗位的匹配度，并推荐最契合岗位（详见第三节算法）。本手册展示的，是<b>每个岗位期望的性格特质权重结构</b>，即"这个岗位最适合什么样性格的人"。
+  </div>
+  <div class="note-box" style="background:#fff7e6;border-color:#ffe1a8;color:#7a4b00;">
+    <b>关于"准入资质"：</b>岗位配置中的 <b>qualification</b> 属于<b>硬性门槛（执业资格 / 职称 / 经验）</b>，是独立的约束条件，<b>不参与匹配度加权计算</b>——系统只做性格测评、没有专业资质数据，若把资质塞进加权维度反而会稀释真实性格信号。故本手册将其单独标注，供人工复核。
+  </div>
+
+  <h2 class="sec">二、测评体系概览</h2>
+  <p class="lead">五项测评在"综合匹配"中的影响权重如下（设计依据：与岗位画像的匹配广度 + 学术权威性 + 与本批 17 岗位性格参考的契合度）：</p>
+  <table><thead><tr><th>测评工具</th><th style="width:64px">权重</th><th>说明</th></tr></thead><tbody>
+  <tr><td class="t-name">MBTI 职业性格</td><td class="t-w">25%</td><td>基础认知偏好（4 字母 16 型），与岗位"性格参考"高度对齐</td></tr>
+  <tr><td class="t-name">大五人格</td><td class="t-w">25%</td><td>学术最权威，覆盖外倾/尽责/宜人/神经质/开放性 5 大维度</td></tr>
+  <tr><td class="t-name">PDP 动物人格</td><td class="t-w">20%</td><td>行为风格（老虎/孔雀/无尾熊/猫头鹰/变色龙），与岗位动物特质对齐</td></tr>
+  <tr><td class="t-name">DISC 行为风格</td><td class="t-w">15%</td><td>行为风格补充（D/I/S/C），与 PDP 部分重叠</td></tr>
+  <tr><td class="t-name">九型人格</td><td class="t-w">15%</td><td>动机与深层性格驱动力补充</td></tr></tbody></table>
+
+  <p class="lead" style="margin-top:16px;">岗位匹配使用 <b>22 个维度</b>（分两层），由 5 项测评推导后加权比对：</p>
+  <table><thead><tr><th style="width:34px">#</th><th>维度名称</th><th style="width:130px">层级</th></tr></thead><tbody><tr><td class="idx">1</td><td>共情能力</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">2</td><td>情绪稳定</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">3</td><td>责任心</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">4</td><td>沟通表达</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">5</td><td>抗压能力</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">6</td><td>学习能力</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">7</td><td>领导力</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">8</td><td>团队协作</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">9</td><td>细致严谨</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">10</td><td>创新思维</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">11</td><td>主动性</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">12</td><td>服务意识</td><td class="layer la">A·人格基底</td></tr><tr><td class="idx">13</td><td>口头表达与说服</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">14</td><td>倾听理解与回应</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">15</td><td>流程合规与差错防范</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">16</td><td>应急与危机处置</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">17</td><td>观察洞察</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">18</td><td>执行落地</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">19</td><td>跨部门协调</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">20</td><td>持续学习适应</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">21</td><td>耐心与照护亲和</td><td class="layer lb">B·职业胜任力</td></tr><tr><td class="idx">22</td><td>专业审慎与风险意识</td><td class="layer lb">B·职业胜任力</td></tr></tbody></table>
+  <div class="note-box">A 层·人格基底（12）：由测评直接/间接推导的核心性格特质；B 层·职业胜任力（10）：在 A 层之上派生，更贴近实际工作场景（如"流程合规与差错防范""耐心与照护亲和"）。</div>
+
+  <h2 class="sec">三、匹配算法说明</h2>
+  <div class="note-box" style="background:#f1f6fb;border-color:#d6e4f2;color:#33475b;">
+    匹配度 = Σ(员工维度得分 × 岗位维度权重) ÷ (10 × Σ权重) × 100%<br>
+    其中员工维度得分由 5 项测评分别推导 22 维后，按上方权重（MBTI 25 / 大五 25 / PDP 20 / DISC 15 / 九型 15）加权平均得到（1–10 分制）。<b>权重之和恒为 100%</b>，匹配度即"员工性格结构与岗位期望结构的契合百分比"。
+  </div>
+
+  <h2 class="sec">四、17 个岗位性格画像</h2>
+  <p class="lead">每张卡片展示：岗位分组、数据来源、画像要点、准入资质（硬约束）、性格权重结构（条形越长权重越高，A 蓝 / B 绿），以及核心特质速读。</p>
+  
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">01</span>
+      <div class="card-titles">
+        <h3>区域院长</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：01_区域院长</span></div>
+      </div>
+      <span class="layer-break">人格基底 74% · 职业胜任力 26%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>战略统筹 + 跨项目管控 + 对外协调（政府/合作方）</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>医疗机构管理经验（区域/多项目负责人背景优先），熟悉养老运营与政企关系</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">领导力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:93%;background:#2E6FB0"></span></span>
+        <span class="dim-w">28%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">跨部门协调<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">应急与危机处置<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E9E6B"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>领导力·统筹决策、责任心·可靠担当、跨部门协调·对外协同</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">02</span>
+      <div class="card-titles">
+        <h3>院长</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：02_院长</span></div>
+      </div>
+      <span class="layer-break">人格基底 76% · 职业胜任力 24%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>机构全面负责：运营 + 团队 + 对外关系</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>中级及以上职称 / 养老机构院长培训合格，具备 30 人团队管理经验</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">领导力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:93%;background:#2E6FB0"></span></span>
+        <span class="dim-w">28%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">应急与危机处置<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E9E6B"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">跨部门协调<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E9E6B"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>领导力·统筹决策、责任心·可靠担当、沟通表达·沟通协调</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">03</span>
+      <div class="card-titles">
+        <h3>副院长</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：03_副院长</span></div>
+      </div>
+      <span class="layer-break">人格基底 90% · 职业胜任力 10%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>分管服务品质与团队，照护 + 共情 + 细致主导</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>护理或养老管理中级职称优先，分管服务品质与团队</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:87%;background:#2E6FB0"></span></span>
+        <span class="dim-w">26%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">共情能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">耐心与照护亲和<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E9E6B"></span></span>
+        <span class="dim-w">10%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">团队协作<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E6FB0"></span></span>
+        <span class="dim-w">10%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、服务意识·服务导向、责任心·可靠担当</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">04</span>
+      <div class="card-titles">
+        <h3>行政综合岗</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：04_行政 + 项目公司行政岗位职责</span></div>
+      </div>
+      <span class="layer-break">人格基底 74% · 职业胜任力 26%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>基础保障 + 客户触点 + 跨部门协同</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>行政/文秘相关经验，熟练使用办公软件与档案/证照管理</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">跨部门协调<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E9E6B"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">流程合规与差错防范<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E9E6B"></span></span>
+        <span class="dim-w">10%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、沟通表达·沟通协调、责任心·可靠担当</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">05</span>
+      <div class="card-titles">
+        <h3>社工</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：05_社工</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>长者关怀 + 活动策划 + 宣传 + 共情</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>持有社会工作师资格证优先，擅长活动策划与长者关怀</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">共情能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:87%;background:#2E6FB0"></span></span>
+        <span class="dim-w">26%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">倾听理解与回应<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">创新思维<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">团队协作<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E6FB0"></span></span>
+        <span class="dim-w">10%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>共情能力·共情关怀、沟通表达·沟通协调、服务意识·服务导向</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">06</span>
+      <div class="card-titles">
+        <h3>介护师</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：06_介护</span></div>
+      </div>
+      <span class="layer-break">人格基底 82% · 职业胜任力 18%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>一线照护 50% + 标准化 30% + 突发应对</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>养老护理员职业技能等级证书（五级及以上）</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">共情能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">耐心与照护亲和<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E9E6B"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">情绪稳定<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:27%;background:#2E6FB0"></span></span>
+        <span class="dim-w">8%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>共情能力·共情关怀、服务意识·服务导向、耐心与照护亲和·耐心照护</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">07</span>
+      <div class="card-titles">
+        <h3>营销经理</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：07_营销经理</span></div>
+      </div>
+      <span class="layer-break">人格基底 82% · 职业胜任力 18%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>入住转化 55% + 口碑 + 渠道管理 + 团队</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>养老/医疗行业销售管理经验，具备团队与目标管理能力</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">口头表达与说服<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E9E6B"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">抗压能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">主动性<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">领导力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">创新思维<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>沟通表达·沟通协调、口头表达与说服·说服表达、抗压能力·承压抗压</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">08</span>
+      <div class="card-titles">
+        <h3>营销专员</h3>
+        <div class="card-sub"><span class="grp grp-org">机构</span><span class="src">源：08_营销专员</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>接待 50% + 客户跟进 30% + 口碑</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>良好沟通与服务意识，有无经验均可培养</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">主动性<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">共情能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">口头表达与说服<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">抗压能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>沟通表达·沟通协调、服务意识·服务导向、主动性·主动进取</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">09</span>
+      <div class="card-titles">
+        <h3>护理院医生</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：1.护理院-医生</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>医疗质量 55% + 诊疗 + 多学科协作</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>执业医师资格证（临床/全科方向）</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:87%;background:#2E6FB0"></span></span>
+        <span class="dim-w">26%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">专业审慎与风险意识<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">情绪稳定<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E6FB0"></span></span>
+        <span class="dim-w">10%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、学习能力·持续学习</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">10</span>
+      <div class="card-titles">
+        <h3>护理院护士</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：1.护理院-护士</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>护理质量 55% + 病情监测 MDT 20% + 慢病管理</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>护士执业资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">流程合规与差错防范<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、服务意识·服务导向</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">11</span>
+      <div class="card-titles">
+        <h3>诊所医生</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：2.诊所-医生</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>医疗质量 55% + 门诊 25% + 协作</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>执业医师资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">专业审慎与风险意识<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、学习能力·持续学习</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">12</span>
+      <div class="card-titles">
+        <h3>诊所护士</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：2.诊所-护士</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>护理质量 55% + 用药 20% + 健康宣教</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>护士执业资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E6FB0"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">流程合规与差错防范<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、服务意识·服务导向</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">13</span>
+      <div class="card-titles">
+        <h3>养老机构医生</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：3.养老机构-医生</span></div>
+      </div>
+      <span class="layer-break">人格基底 86% · 职业胜任力 14%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>医疗质量 55% + 老年诊疗 25% + 团队</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>执业医师资格证（老年医学方向优先）</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:80%;background:#2E6FB0"></span></span>
+        <span class="dim-w">24%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">专业审慎与风险意识<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E9E6B"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:43%;background:#2E6FB0"></span></span>
+        <span class="dim-w">13%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:43%;background:#2E6FB0"></span></span>
+        <span class="dim-w">13%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、学习能力·持续学习</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">14</span>
+      <div class="card-titles">
+        <h3>养老机构护士</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：3.养老机构-护士</span></div>
+      </div>
+      <span class="layer-break">人格基底 78% · 职业胜任力 22%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>长期照护 + 评估 + 增值服务，照护亲和突出</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>护士执业资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">耐心与照护亲和<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E9E6B"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:40%;background:#2E6FB0"></span></span>
+        <span class="dim-w">12%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:27%;background:#2E6FB0"></span></span>
+        <span class="dim-w">8%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>耐心与照护亲和·耐心照护、服务意识·服务导向、细致严谨·严谨精细</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">15</span>
+      <div class="card-titles">
+        <h3>药剂师</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：4.药剂师</span></div>
+      </div>
+      <span class="layer-break">人格基底 68% · 职业胜任力 32%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>药品安全 50% + 合理用药 25% + 标准化</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>执业药师资格证（必备）</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:100%;background:#2E6FB0"></span></span>
+        <span class="dim-w">30%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">流程合规与差错防范<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E9E6B"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">专业审慎与风险意识<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E9E6B"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">情绪稳定<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、流程合规与差错防范·合规防错</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">16</span>
+      <div class="card-titles">
+        <h3>康复师</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：5.康复师</span></div>
+      </div>
+      <span class="layer-break">人格基底 82% · 职业胜任力 18%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>康复治疗 45% + 标准 30% + 评估 15%，重激励引导</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>康复治疗师（士）资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">服务意识<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">共情能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:67%;background:#2E6FB0"></span></span>
+        <span class="dim-w">20%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">耐心与照护亲和<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:60%;background:#2E9E6B"></span></span>
+        <span class="dim-w">18%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">沟通表达<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">学习能力<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:47%;background:#2E6FB0"></span></span>
+        <span class="dim-w">14%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">主动性<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:33%;background:#2E6FB0"></span></span>
+        <span class="dim-w">10%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>服务意识·服务导向、共情能力·共情关怀、耐心与照护亲和·耐心照护</b></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-no">17</span>
+      <div class="card-titles">
+        <h3>检验师</h3>
+        <div class="card-sub"><span class="grp grp-med">医护</span><span class="src">源：6.检验师</span></div>
+      </div>
+      <span class="layer-break">人格基底 68% · 职业胜任力 32%</span>
+    </div>
+    <div class="card-note"><b>画像要点：</b>检验 50% + 标准化 20% + 生物安全 20%</div>
+    <div class="qual"><span class="q-tag">准入资质（硬约束·不参与匹配计算）</span>医学检验资格证</div>
+    <div class="bars">
+      <div class="dim-row">
+        <span class="dim-name">细致严谨<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:100%;background:#2E6FB0"></span></span>
+        <span class="dim-w">30%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">责任心<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:73%;background:#2E6FB0"></span></span>
+        <span class="dim-w">22%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">流程合规与差错防范<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E9E6B"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">专业审慎与风险意识<i class="tag tb">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E9E6B"></span></span>
+        <span class="dim-w">16%</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">情绪稳定<i class="tag ta">B</i></span>
+        <span class="bar-track"><span class="bar-fill" style="width:53%;background:#2E6FB0"></span></span>
+        <span class="dim-w">16%</span>
+      </div></div>
+    <div class="card-foot">核心特质：<b>细致严谨·严谨精细、责任心·可靠担当、流程合规与差错防范·合规防错</b></div>
+  </div>
+
+  <h2 class="sec">附录 · 岗位 × 22 维权重矩阵</h2>
+  <p class="lead">横向为 22 个维度，纵向为 17 个岗位；单元格数字为该岗位该维度的权重（%）。<b>深蓝=高权重(≥20)</b>，<b>浅蓝=中权重(14–19)</b>，·=该岗位未纳入此维度。</p>
+  <div class="matrix-wrap"><table class="matrix">
+    <thead><tr><th class="pname">岗位＼维度</th><th class="rot" title="共情能力"><span>共情能力</span></th><th class="rot" title="情绪稳定"><span>情绪稳定</span></th><th class="rot" title="责任心"><span>责任心</span></th><th class="rot" title="沟通表达"><span>沟通表达</span></th><th class="rot" title="抗压能力"><span>抗压能力</span></th><th class="rot" title="学习能力"><span>学习能力</span></th><th class="rot" title="领导力"><span>领导力</span></th><th class="rot" title="团队协作"><span>团队协作</span></th><th class="rot" title="细致严谨"><span>细致严谨</span></th><th class="rot" title="创新思维"><span>创新思维</span></th><th class="rot" title="主动性"><span>主动性</span></th><th class="rot" title="服务意识"><span>服务意识</span></th><th class="rot" title="口头表达与说服"><span>口头表达与说服</span></th><th class="rot" title="倾听理解与回应"><span>倾听理解与回应</span></th><th class="rot" title="流程合规与差错防范"><span>流程合规与差错防范</span></th><th class="rot" title="应急与危机处置"><span>应急与危机处置</span></th><th class="rot" title="观察洞察"><span>观察洞察</span></th><th class="rot" title="执行落地"><span>执行落地</span></th><th class="rot" title="跨部门协调"><span>跨部门协调</span></th><th class="rot" title="持续学习适应"><span>持续学习适应</span></th><th class="rot" title="耐心与照护亲和"><span>耐心与照护亲和</span></th><th class="rot" title="专业审慎与风险意识"><span>专业审慎与风险意识</span></th></tr></thead>
+    <tbody><tr><td class="pname">区域院长</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">28</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">院长</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">28</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">副院长</td><td class="val mid">14</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">10</td><td class="val hot">26</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">10</td><td class="empty">·</td></tr><tr><td class="pname">行政综合岗</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="val mid">18</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val">10</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">社工</td><td class="val hot">26</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">20</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">10</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">介护师</td><td class="val hot">24</td><td class="val">8</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td></tr><tr><td class="pname">营销经理</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="val mid">16</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val">12</td><td class="val mid">16</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">营销专员</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">24</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="val mid">18</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">护理院医生</td><td class="empty">·</td><td class="val">12</td><td class="val hot">22</td><td class="val">10</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">26</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td></tr><tr><td class="pname">护理院护士</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">20</td><td class="val">12</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">24</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">诊所医生</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="val mid">14</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">24</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td></tr><tr><td class="pname">诊所护士</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">20</td><td class="val">12</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">24</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td></tr><tr><td class="pname">养老机构医生</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">20</td><td class="val">13</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">24</td><td class="empty">·</td><td class="empty">·</td><td class="val">13</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">14</td></tr><tr><td class="pname">养老机构护士</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="val">8</td><td class="empty">·</td><td class="val">12</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">20</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">22</td><td class="empty">·</td></tr><tr><td class="pname">药剂师</td><td class="empty">·</td><td class="val mid">16</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">30</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td></tr><tr><td class="pname">康复师</td><td class="val hot">20</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="val mid">14</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val">10</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">18</td><td class="empty">·</td></tr><tr><td class="pname">检验师</td><td class="empty">·</td><td class="val mid">16</td><td class="val hot">22</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val hot">30</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="val mid">16</td></tr></tbody>
+  </table></div>
+
+  <div class="foot-note">本手册由岗位配置数据自动生成，与线上测评系统（康源性格测试）保持同源。岗位画像权重依据 3 份 2026 版岗位说明书（性格参考 + 工作权重 KPI）推导，供人才评估参考，不替代专业资质审核与人工面试判断。</div>
+
+</div></body></html>
