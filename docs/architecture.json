@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "员工职业测评系统 · 架构与安全边界",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [980, 620],
+    "output": "docs/architecture.html"
+  },
+  "components": [
+    { "id": "emp", "type": "external", "label": "员工", "sublabel": "匿名，无需注册", "pos": [30, 130], "size": [140, 62] },
+    { "id": "admin", "type": "external", "label": "管理员", "sublabel": "Supabase Auth 登录", "pos": [30, 400], "size": [140, 62] },
+    { "id": "fe", "type": "frontend", "label": "前端多入口", "sublabel": "Vite 5 多页构建", "pos": [240, 258], "size": [156, 88], "tag": "assess / result / admin" },
+    { "id": "core", "type": "backend", "label": "题库与计分层", "sublabel": "5 套量表 · 162 题", "pos": [470, 258], "size": [162, 88], "tag": "归一层 + 加权映射" },
+    { "id": "sb", "type": "cloud", "label": "Supabase", "sublabel": "PostgreSQL + Auth", "pos": [706, 258], "size": [152, 88], "tag": "RLS 已启用" },
+    { "id": "audit", "type": "database", "label": "审计日志", "sublabel": "admin_audit_log", "pos": [706, 452], "size": [152, 58], "tag": "仅管理员可读写" }
+  ],
+  "boundaries": [
+    { "kind": "security-group", "label": "Cloudflare Pages 托管（静态前端 + 环境变量注入）", "wraps": ["fe", "core"] },
+    { "kind": "security-group", "label": "数据层（RLS 强制按访问路径授权）", "wraps": ["sb", "audit"] }
+  ],
+  "connections": [
+    { "id": "emp-fe", "from": "emp", "to": "fe", "label": "答题 / 看报告", "variant": "emphasis" },
+    { "id": "admin-fe", "from": "admin", "to": "fe", "label": "登录后台", "variant": "emphasis" },
+    { "id": "fe-core", "from": "fe", "to": "core", "label": "作答数据", "variant": "emphasis" },
+    { "id": "core-sb", "from": "core", "to": "sb", "label": "写入测评记录", "variant": "emphasis" },
+    { "id": "sb-audit", "from": "sb", "to": "audit", "label": "操作留痕", "variant": "dashed", "labelDy": 24 }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "安全修复（本项目最关键的一段）",
+      "items": [
+        "修复前：未启用 RLS，anon key 可对 assessments / jobs 任意读、写、删",
+        "后果：任何人从前端 JS 取到 anon key，即可清空或篡改全部测评数据，后台登录门形同虚设",
+        "修复：按客户端实际访问路径逐条设计策略，每条都标注对应代码位置",
+        "① 匿名员工 → assessments INSERT（report.js:126）",
+        "② 匿名员工 → jobs SELECT（report.js:142）",
+        "③ 认证管理员 → assessments 全 CRUD（admin.js:187）",
+        "④ 认证管理员 → jobs 全 CRUD（admin.js:356/602）",
+        "⑤ 认证管理员 → admin_audit_log SELECT+INSERT（store.js:52）"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "五套量表的量纲融合",
+      "items": [
+        "MBTI 28 / 大五 44 / PDP 30 / DISC 24 / 九型 36 = 162 题",
+        "难点：五套体系原始分数量纲不同（二分类型 / 人群比较 / 四象限强度），无法直接相加",
+        "解法：先归一为 0–100 标准分，再按权重映射到统一七维度坐标",
+        "大五与九型含反向计分题，计分时按维度标记翻转"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "落地情况",
+      "items": [
+        "线上运行：kymh-assessment.pages.dev（Cloudflare Pages）",
+        "累计 100+ 名企业员工完成测评",
+        "含管理后台：登录门禁 / 记录管理 / 岗位维度配置 / 操作审计",
+        "Excel 导出：冻结首行 + 隔行斑马纹 + 列宽自适应 + 多行换行"
+      ]
+    }
+  ]
+}
