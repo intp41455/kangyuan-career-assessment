@@ -331,7 +331,7 @@ function exportExcel(records) {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `康源美宏_已测试人员分析表_${formatDate(new Date().toISOString(), true)}.xlsx`;
+      a.download = `示例集团_已测试人员分析表_${formatDate(new Date().toISOString(), true)}.xlsx`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

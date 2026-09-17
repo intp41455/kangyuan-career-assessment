@@ -141,20 +141,20 @@ export function generateFinalAdvice(profile, results, topJob) {
   advice += `你在**${topDimNames}**上的表现尤为突出，这是你独特而宝贵的职业资本。`;
 
   if (topJob) {
-    advice += `综合多维交叉分析，系统判断你在康源美宏的**${topJob.job.name}**岗位上有较高的匹配潜力（${topJob.matchPct}%），`;
+    advice += `综合多维交叉分析，系统判断你在示例集团的**${topJob.job.name}**岗位上有较高的匹配潜力（${topJob.matchPct}%），`;
     advice += `这个方向既能发挥你的自然优势，也有进一步成长的空间。`;
   }
 
   advice += `职业发展不是一次定型，而是一段持续探索的旅程。`;
   advice += `建议你在发挥优势的同时，留意报告中所指出的成长点，`;
   advice += `把它们视为可以刻意练习的方向，而非需要回避的不足。`;
-  advice += `康源美宏的业务涵盖养老、教育和社区服务，正需要像你这样有独特禀赋的伙伴，`;
+  advice += `示例集团的业务涵盖养老、教育和社区服务，正需要像你这样有独特禀赋的伙伴，`;
   advice += `在合适的位置上发光发热。愿你在这份工作中被看见、被珍视，也持续成为更好的自己。`;
 
   return advice;
 }
 
-// 业务板块推荐：将真实 17 个岗位映射到康源美宏的业务板块，按板块内岗位的平均匹配度给出建议。
+// 业务板块推荐：将真实 17 个岗位映射到示例集团的业务板块，按板块内岗位的平均匹配度给出建议。
 export function recommendBusiness(results, topJobs) {
   const businessMap = {
     '机构养老运营': ['区域院长', '院长', '副院长', '介护师', '社工', '养老机构医生', '养老机构护士'],

@@ -428,7 +428,7 @@ function renderEnneagramSection(enneagram, info) {
       <div class="analysis-block">
         <h4>职业建议</h4>
         <p><strong>最易获得满足感的工作：</strong>${info.satisfaction}</p>
-        <p><strong>康源美宏适合方向：</strong>${info.fit}</p>
+        <p><strong>示例集团适合方向：</strong>${info.fit}</p>
         <p><strong>发展陷阱与突破：</strong>${info.trap}</p>
         <p><strong>与不同类型同事相处：</strong>${info.relation}</p>
       </div>

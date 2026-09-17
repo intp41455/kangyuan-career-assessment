@@ -1,4 +1,4 @@
-# 康源美宏 · 员工职业性格测评系统 — AI 运维总览手册
+# 示例集团 · 员工职业性格测评系统 — AI 运维总览手册
 
 > 用途：本手册供**未来接手的全权运维 AI** 阅读。它汇总了项目从诞生到 2026-08-25 的全部过程、所有代码/文档、本地/云端/远端三种环境的真实状态，以及所有已修复与待修复的 Bug、操作红线。投喂本文件 + 克隆 GitHub 仓库，即可让新 AI 完整接管本项目的代码修改、Bug 修复、部署与运营。
 
@@ -6,7 +6,7 @@
 
 ## 0. 一句话定位
 
-一个 **162 题**的职业性格测评 Web 系统，覆盖 **MBTI + 大五(Big5) + PDP + DISC + 九型人格** 五大体系，自动生成个性化报告与岗位匹配，数据存入 **Supabase** 云数据库，前端由 **CloudStudio** 静态托管。当前用于「陕西康源美宏养老服务有限公司」员工测评。
+一个 **162 题**的职业性格测评 Web 系统，覆盖 **MBTI + 大五(Big5) + PDP + DISC + 九型人格** 五大体系，自动生成个性化报告与岗位匹配，数据存入 **Supabase** 云数据库，前端由 **CloudStudio** 静态托管。当前用于「示例养老服务有限公司」员工测评。
 
 ---
 
@@ -14,7 +14,7 @@
 
 | 时间 | 事件 |
 |---|---|
-| 初次提交 | `bc07e48` 康源美宏员工职业性格测评系统（162题 + 岗位匹配），Vite + Supabase |
+| 初次提交 | `bc07e48` 示例集团员工职业性格测评系统（162题 + 岗位匹配），Vite + Supabase |
 | 后续迭代 | 岗位匹配升级 22 维、导出表改 ExcelJS、PDP 新版定义、业务板块推荐修复、幂等去重等（见第 5 节 git 历史） |
 | **2026-08-24** | **P0 事故**：有人测试完报告页崩溃，截图报错 `ReferenceError: saved is not defined`。根因：上一次「幂等去重」提交(`e6fb773`)把 `const saved` 声明在 `else` 块内，却在外层引用，块级作用域导致 ReferenceError。该异常发生在评分之后、**存档之前**，导致当天所有人的测评记录从未写入云端/本机。 |
 | 2026-08-24 | 修复 P0 + 5 个潜在 Bug（`19d629a`），部署新链接 `db49f0a2`。发现 CloudStudio「下架旧链接→新链接换域名→旧 localStorage 全部失联」的机制问题。 |
@@ -37,12 +37,12 @@
 ## 3. 三重环境总览
 
 ### 3.1 本地（开发者机器）
-- **项目根目录**：`C:\Users\intpj\Desktop\project`（即本仓库工作区）
-- **部署历史/链接注册表**：`C:\Users\intpj\.workbuddy\cloudstudio-deploy-history\`
+- **项目根目录**：`<项目工作区>`（即本仓库工作区）
+- **部署历史/链接注册表**：`<用户目录>\.workbuddy\cloudstudio-deploy-history\`
   - 每次部署一个 JSON 记录（含 `deployTargetId`、`sandboxId`、`conversationId`、`shareLink`）
   - `unpublish-records/`：被下架（取消发布）的链接记录
   - `_revive-backup-20260825/`：复活旧链接时的备份
-- **Node 运行时**：优先用 WorkBuddy 管理的 `C:\Users\intpj\.workbuddy\binaries\node\versions\22.22.2\node.exe`
+- **Node 运行时**：优先用 WorkBuddy 管理的 `<用户目录>\.workbuddy\binaries\node\versions\22.22.2\node.exe`
 - **构建产物目录**：`dist/`（长期存活沙箱 `b8dd489c` 的来源）、`.deploy-build-4`（旧链接 `a0c3e70b`）、`.deploy-build-5`（曾用于 `db49f0a2`），均为同一份代码的部署快照。
 
 ### 3.2 云端（对外服务）
@@ -114,7 +114,7 @@
 ## 5. Git 仓库关键提交时间线
 
 ```
-bc07e48 初次提交：康源美宏员工职业性格测评系统
+bc07e48 初次提交：示例集团员工职业性格测评系统
 ef65a12 后台导出改星青年性格分析排版；新增院长/副院长/行政灵活岗位
 14a38c6 题型严谨性分析报告加入构建入口
 7ae085c 星青年导出文字按真实维度得分个性化
@@ -207,7 +207,7 @@ f434c99 导出表改 ExcelJS 自带排版
 
 ### 11.1 本地构建
 ```bash
-cd C:\Users\intpj\Desktop\project
+cd <项目工作区>
 rm -rf dist && npx vite build --outDir dist   # 用 WorkBuddy 管理的 node 22
 # 产物含 _redirects（若缺失从 .deploy-build-2 拷贝）
 ```
@@ -277,7 +277,7 @@ env -u HTTP_PROXY -u HTTPS_PROXY -u http_proxy -u https_proxy git push origin ma
 
 ## 15. 标准交接 Prompt（复制给未来 AI 即可接管）
 
-> 你从现在起全权负责「康源美宏员工职业性格测评系统」的运维。项目在 GitHub 私有仓库 `git@github.com:intp41455/career-personality-assessment.git`（分支 main），本地工作区 `C:\Users\intpj\Desktop\project`。技术栈：Vite 多页纯前端 + Supabase(PostgreSQL, ref `zknmsszhupuvhtnkzwoo`) + CloudStudio 静态托管。详见随附的《AI运维总览手册.md》(同一目录)。请先 `git clone` 并通读手册，重点记住：**更新部署必须同目录重部署、绝不下架链接**（否则用户 localStorage 失联）；已修复 P0 `saved` 作用域崩溃；当前有第 9 节 7 项待修 Bug 与第 12 节 3 项遗留任务待处理。后续所有代码修改、Bug 修复、部署、数据恢复、用户咨询均由你独立完成并自审，重大变更先小额提交再推送。
+> 你从现在起全权负责「示例集团员工职业性格测评系统」的运维。项目在 GitHub 私有仓库 `git@github.com:intp41455/career-personality-assessment.git`（分支 main），本地工作区 `<项目工作区>`。技术栈：Vite 多页纯前端 + Supabase(PostgreSQL, ref `zknmsszhupuvhtnkzwoo`) + CloudStudio 静态托管。详见随附的《AI运维总览手册.md》(同一目录)。请先 `git clone` 并通读手册，重点记住：**更新部署必须同目录重部署、绝不下架链接**（否则用户 localStorage 失联）；已修复 P0 `saved` 作用域崩溃；当前有第 9 节 7 项待修 Bug 与第 12 节 3 项遗留任务待处理。后续所有代码修改、Bug 修复、部署、数据恢复、用户咨询均由你独立完成并自审，重大变更先小额提交再推送。
 
 ---
 
